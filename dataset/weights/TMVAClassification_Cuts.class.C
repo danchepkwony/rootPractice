@@ -10,7 +10,7 @@ Method         : Cuts::Cuts
 TMVA Release   : 4.2.1         [262657]
 ROOT Release   : 6.24/04       [399364]
 Creator        : danchepkwony
-Date           : Fri Nov  5 11:14:23 2021
+Date           : Fri Nov  5 12:36:18 2021
 Host           : Darwin BigSur 20.4.0 Darwin Kernel Version 20.4.0: Thu Apr 22 21:46:47 PDT 2021; root:xnu-7195.101.2~1/RELEASE_X86_64 x86_64
 Dir            : /Users/danchepkwony/Documents/Skoby/basicRoot
 Training events: 197

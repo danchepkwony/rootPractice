@@ -4,11 +4,11 @@
     <Info name="TMVA Release" value="4.2.1 [262657]"/>
     <Info name="ROOT Release" value="6.24/04 [399364]"/>
     <Info name="Creator" value="danchepkwony"/>
-    <Info name="Date" value="Fri Nov  5 11:14:23 2021"/>
+    <Info name="Date" value="Fri Nov  5 12:36:18 2021"/>
     <Info name="Host" value="Darwin BigSur 20.4.0 Darwin Kernel Version 20.4.0: Thu Apr 22 21:46:47 PDT 2021; root:xnu-7195.101.2~1/RELEASE_X86_64 x86_64"/>
     <Info name="Dir" value="/Users/danchepkwony/Documents/Skoby/basicRoot"/>
     <Info name="Training events" value="197"/>
-    <Info name="TrainingTime" value="2.53484011e-01"/>
+    <Info name="TrainingTime" value="2.47559071e-01"/>
     <Info name="AnalysisType" value="Classification"/>
   </GeneralInfo>
   <Options>

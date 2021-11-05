@@ -46,17 +46,8 @@ int basicRoot()
     dataloader->AddBackgroundTree( backgroundTree, backgroundWeight );
     dataloader->PrepareTrainingAndTestTree("", "", "SplitMode=Random:!V" );
 
-    //Cuts and ML method
-    factory->BookMethod( dataloader, TMVA::Types::kCuts, "Cuts",
-                           "!H:!V:FitMethod=MC:EffSel:VarProp=FSmart" );
-    factory->BookMethod( dataloader, TMVA::Types::kCuts, "CutsD",
-                           "!H:!V:FitMethod=MC:EffSel:VarProp=FSmart:VarTransform=Decorrelate" );
+    //MLP
     factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLPBNN", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=60:HiddenLayers=N+5:TestRate=5:TrainingMethod=BFGS:UseRegulator" );
-
-    //Show trends
-    // factory->BookMethod( dataloader, TMVA::Types::kSVM, "SVM", "Gamma=0.25:Tol=0.001:VarTransform=Norm" );
-    // factory->BookMethod( dataloader, TMVA::Types::kRuleFit, "RuleFit",
-    //                        "H:!V:RuleFitModule=RFTMVA:Model=ModRuleLinear:MinImp=0.001:RuleMinDist=0.001:NTrees=20:fEventsMin=0.01:fEventsMax=0.5:GDTau=-1.0:GDTauPrec=0.01:GDStep=0.01:GDNSteps=10000:GDErrScale=1.02" );
 
     factory->TrainAllMethods();
     factory->TestAllMethods();
