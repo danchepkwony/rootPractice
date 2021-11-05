@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<MethodSetup Method="RuleFit::RuleFit">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.2.1 [262657]"/>
+    <Info name="ROOT Release" value="6.24/04 [399364]"/>
+    <Info name="Creator" value="danchepkwony"/>
+    <Info name="Date" value="Fri Nov  5 11:02:01 2021"/>
+    <Info name="Host" value="Darwin BigSur 20.4.0 Darwin Kernel Version 20.4.0: Thu Apr 22 21:46:47 PDT 2021; root:xnu-7195.101.2~1/RELEASE_X86_64 x86_64"/>
+    <Info name="Dir" value="/Users/danchepkwony/Documents/Skoby/basicRoot"/>
+    <Info name="Training events" value="260"/>
+    <Info name="TrainingTime" value="1.16216898e-01"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="No">None</Option>
+    <Option name="H" modified="Yes">True</Option>
+    <Option name="CreateMVAPdfs" modified="No">False</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+    <Option name="GDTau" modified="Yes">-1.000000e+00</Option>
+    <Option name="GDTauPrec" modified="Yes">1.000000e-02</Option>
+    <Option name="GDStep" modified="Yes">1.000000e-02</Option>
+    <Option name="GDNSteps" modified="Yes">10000</Option>
+    <Option name="GDErrScale" modified="Yes">1.020000e+00</Option>
+    <Option name="LinQuantile" modified="No">2.500000e-02</Option>
+    <Option name="GDPathEveFrac" modified="No">5.000000e-01</Option>
+    <Option name="GDValidEveFrac" modified="No">5.000000e-01</Option>
+    <Option name="fEventsMin" modified="Yes">1.000000e-02</Option>
+    <Option name="fEventsMax" modified="Yes">5.000000e-01</Option>
+    <Option name="nTrees" modified="Yes">20</Option>
+    <Option name="ForestType" modified="No">adaboost</Option>
+    <Option name="RuleMinDist" modified="Yes">1.000000e-03</Option>
+    <Option name="MinImp" modified="Yes">1.000000e-03</Option>
+    <Option name="Model" modified="Yes">modrulelinear</Option>
+    <Option name="RuleFitModule" modified="Yes">rftmva</Option>
+    <Option name="RFWorkDir" modified="No">./rulefit</Option>
+    <Option name="RFNrules" modified="No">2000</Option>
+    <Option name="RFNendnodes" modified="No">4</Option>
+  </Options>
+  <Variables NVar="2">
+    <Variable VarIndex="0" Expression="G1" Label="G1" Title="G1" Unit="" Internal="G1" Type="F" Min="3.00000000e+00" Max="1.90000000e+01"/>
+    <Variable VarIndex="1" Expression="G3" Label="G3" Title="G3" Unit="" Internal="G3" Type="F" Min="0.00000000e+00" Max="1.90000000e+01"/>
+  </Variables>
+  <Spectators NSpec="0"/>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs/>
+  <Weights NRules="2" NLinear="2" LearningModel="0" ImportanceCut="1.0000000000000000e-03" LinQuantile="2.5000000000000001e-02" AverageSupport="5.0000000000000000e-01" AverageRuleSigma="5.0000000000000000e-01" Offset="2.0822506354261539e-01">
+    <Rule Importance="6.4037000140398703e-01" Ref="6.4037000140398703e-01" Coeff="-1.2807400028079741e+00" Support="5.0000000000000000e-01" Sigma="5.0000000000000000e-01" Norm="2.0000000000000000e+00" SSB="0.0000000000000000e+00" SSBNeve="1.3000000000000000e+02" Nvars="1">
+      <Cut Selector="1" Min="0.0000000000000000e+00" Max="9.0476188659667969e+00" DoMin="F" DoMax="T"/>
+    </Rule>
+    <Rule Importance="3.8482810230554698e-01" Ref="6.4037000140398703e-01" Coeff="7.6965620461109396e-01" Support="5.0000000000000000e-01" Sigma="5.0000000000000000e-01" Norm="2.0000000000000000e+00" SSB="1.0000000000000000e+00" SSBNeve="1.3000000000000000e+02" Nvars="1">
+      <Cut Selector="1" Min="9.0476188659667969e+00" Max="0.0000000000000000e+00" DoMin="T" DoMax="F"/>
+    </Rule>
+    <Linear OK="1" Coeff="-1.0367404370219727e-01" Norm="1.2918870381173680e-01" DM="5.0000000000000000e+00" DP="1.6000000000000000e+01" Importance="5.1837021851098633e-02"/>
+    <Linear OK="1" Coeff="2.2442418181233156e-01" Norm="8.2586559816600083e-02" DM="0.0000000000000000e+00" DP="1.8000000000000000e+01" Importance="1.1221209090616578e-01"/>
+  </Weights>
+</MethodSetup>
