@@ -2,7 +2,11 @@
 
 I took [this dataset](https://archive.ics.uci.edu/ml/datasets/student+performance) and parsed the csv file so it could be read by Root.
 
-If G3 >= 10.8, the grade was passing. Passing grades were signal events while failing grades were background.
+It contains various data of students in a math class, including their final grade on a 20 point scale.
+
+If their final grade was greater than or equal to 10.8, the grade was passing. Passing grades were signal events while failing grades were background.
+
+I attempted to use other variables: study time, past failures, health, absences, school, and first term grade (G1) to predict if the student would pass or fail.
 
 ## Input variables
 
@@ -17,7 +21,7 @@ If G3 >= 10.8, the grade was passing. Passing grades were signal events while fa
     <li>4: More than 10 hours</li>
 </ul>
 
-### Failures: 
+### Past Failures: 
 
 <ul>
     <li>n if 1 ≤ n < 3, else 4</li>
