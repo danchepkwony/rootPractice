@@ -19,26 +19,26 @@
 int basicRoot()
 {
     TMVA::Tools::Instance();
-    auto fileName = "./student-mat-signal.csv";
-    auto fileName2 = "./student-mat-background.csv";
+    auto fileName = "./student-mat-formatted.csv";
     auto rdf = ROOT::RDF::MakeCsvDataFrame(fileName, true, ',');
-    auto rdf2 = ROOT::RDF::MakeCsvDataFrame(fileName2, true, ',');
-    rdf.Snapshot("signalTree", "signalMathScores.root");
-    TFile* signalFile = TFile::Open("signalMathScores.root");
-    TTree *signalTree = signalFile->Get<TTree>("signalTree");
-    rdf2.Snapshot("backgroundTree", "backgroundMathScores.root");
-    TFile* backgroundFile = TFile::Open("backgroundMathScores.root");
-    TTree *backgroundTree = backgroundFile->Get<TTree>("backgroundTree");
+    rdf.Snapshot("mathScores", "mathScores.root");
+    TFile* mathScoresFile = TFile::Open("mathScores.root");
+    TTree *originalTree = mathScoresFile->Get<TTree>("mathScores");
+    TTree *signalTree = originalTree->CopyTree("G3>=10.8");
+    TTree *backgroundTree = originalTree->CopyTree("G3<10.8");
     
-    TString outfileName("MathScore.root");
+    TString outfileName("MathScoreResults.root");
     TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
     TMVA::Factory *factory = new TMVA::Factory( "TMVAClassification", outputFile,
                                                  "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification" );
     TMVA::DataLoader *dataloader=new TMVA::DataLoader("dataset");
 
-    dataloader->AddVariable( "G1" );
-    dataloader->AddVariable( "absences" );
-    dataloader->AddVariable( "freetime" );
+    dataloader->AddVariable( "studytime", "Study Time", "units", 'F' );
+    dataloader->AddVariable( "failures", "Past Failures", "units", 'F' );
+    dataloader->AddVariable( "health", "Health", "units", 'F' );
+    dataloader->AddVariable( "absences", "Absences", "counts", 'F' );
+    dataloader->AddVariable( "school", "School", "school", 'F' );
+    dataloader->AddVariable( "G1", "First Period Grade", "score", 'F' );
 
     Double_t signalWeight = 1.0;
     Double_t backgroundWeight = 1.0;
