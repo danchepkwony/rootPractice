@@ -57,6 +57,7 @@ If G3 >= 10.8, the grade was passing. Passing grades were signal events while fa
 #### Results Without G1
 
 ![Results without G1](./withoutG1.png)
+
 <em>The red-dashed line represents the ROC curve of a random classifier.
 The classifier is slightly better than random</em>
 
